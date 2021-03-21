@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const MESSAGE_REST_API_URL = 'http://localhost:8080/tempModelsMessage';
+const MESSAGE_REST_API_URL = 'https://task-tracker-lc-2021.herokuapp.com/tempModelsMessage';
 
 class MessageService{
 

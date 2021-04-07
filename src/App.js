@@ -1,10 +1,11 @@
 import './App.css';
-import MessageComponent from './components/MessageComponent';
+import DashboardComponent from './components/DashboardComponent';
 
 function App() {
   return (
     <div className="App">
-      <MessageComponent/>
+      {/* <MessageComponent/> */}
+      <DashboardComponent />
     </div>
   );
 }

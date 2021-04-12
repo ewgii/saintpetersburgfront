@@ -17,8 +17,8 @@ import Paper from '@material-ui/core/Paper';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems } from './NavBar';
-import Projects from "./Project/ProjectComponent";
+import { mainListItems } from '../NavBar';
+import ArchivedProjects from './ArchivedProjects';
 
 function Copyright() {
     return (
@@ -110,7 +110,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function DashboardComponent() {
+export default function ArchivedDashboardComponent() {
     const classes = useStyles();
     const [open, setOpen] = React.useState(true);
     const handleDrawerOpen = () => {
@@ -165,7 +165,7 @@ export default function DashboardComponent() {
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
                             <Paper className={classes.paper}>
-                                <Projects />
+                                <ArchivedProjects />
                             </Paper>
                         </Grid>
                     </Grid>

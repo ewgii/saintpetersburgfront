@@ -38,11 +38,11 @@ export const mainListItems = (
             </ListItemIcon>
             <ListItemText primary="Проекты"/>
         </ListItemLink>
-        <ListItem button>
+        <ListItemLink href="/archivedProjects">
             <ListItemIcon>
                 <ArchiveIcon />
             </ListItemIcon>
             <ListItemText primary="Архив"/>
-        </ListItem>
+        </ListItemLink>
     </div>
 );

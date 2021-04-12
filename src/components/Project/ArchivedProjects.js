@@ -5,46 +5,45 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from '../Title';
-import TaskService from "../../services/TaskService";
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-import {Button} from "@material-ui/core";
+import ProjectService from "../../services/ProjectService";
+import ImportExportIcon from '@material-ui/icons/ImportExport';
 
-
-class Tasks extends React.Component {
+class ArchivedProjects extends React.Component {
 
     constructor(props){
         super(props)
         this.state = {
-            tasks:[]
-        }
+            projects:[]
+        } 
     }
 
     componentDidMount(){
-        TaskService.getTasks().then((response) =>{
-            this.setState({tasks: response.data})
+        ProjectService.getArchivedProjects().then((response) =>{
+            this.setState({projects: response.data})
         });
     }
 
     render () {
         return (
             <React.Fragment>
-                <Title>Проекты
-                    <Button variant="contained"  color="primary">
-                        Добавить
-                        <AddCircleOutlineIcon />
-                    </Button>
+                <Title >Архивированные проекты
                 </Title>
 
                 <Table size="small">
                     <TableHead>
                         <TableRow>
                             <TableCell>Название</TableCell>
+                            <TableCell>Вернуть из архива</TableCell>
                         </TableRow>
+
                     </TableHead>
                     <TableBody>
-                        { this.state.tasks.map((task) => (
-                            <TableRow key={task.id}>
-                                <TableCell>{task.name}</TableCell>
+                        { this.state.projects.map((project) => (
+                            <TableRow key={project.id}>
+                                <TableCell>{project.name}</TableCell>
+                                <TableCell>
+                                    <ImportExportIcon />
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
@@ -53,4 +52,4 @@ class Tasks extends React.Component {
         )
     }
 }
-export default Tasks;
+export default ArchivedProjects;
